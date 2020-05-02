@@ -75,6 +75,76 @@
         </div>
     </div>
 
+    <div id="reserveModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Reserve table </h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+              <div class="modal-body">
+                 <form>
+                     <div class="form-group row">
+                         <label  class="col-12 col-sm-2 col-form-label">Number of guests</label>
+
+                         <label class="btn btn-radio">
+                             <input type="radio" name="options" id="option1" autocomplete="off"> 1
+                         </label>
+
+                          <label class="btn btn-radio">
+                             <input type="radio" name="options" id="option2" autocomplete="off"> 2
+                          </label>
+
+                         <label class="btn btn-radio">
+                            <input type="radio" name="options" id="option3" autocomplete="off" > 3
+                         </label>
+                                    
+                         <label class="btn btn-radio">
+                             <input type="radio" name="options" id="option4" autocomplete="off" > 4
+                         </label>
+                                     
+                         <label class="btn btn-radio ">
+                             <input type="radio" name="options" id="option5" autocomplete="off" > 5
+                         </label>
+                                
+                         <label class="btn btn-radio">
+                             <input type="radio" name="options" id="option6" autocomplete="off"> 6
+                         </label>
+                     
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-12 col-sm-2 col-form-label" for="nonSmoking">Section</label>
+                        <div class="btn-group btn-group-toggle col-12 col-sm-2" data-toggle="buttons">
+                            <label class="btn btn-success active">
+                                <input type="radio" name="options" id="nonSmoking" checked> Non-Smoking
+                            </label>
+                            <label class="btn btn-danger">
+                                <input type="radio" name="options" id="smoking" > Smoking
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                             <label for="date" class="col-12 col-sm-2 col-form-label">Date and time</label>
+                             <div class="col-12 col-sm-5">
+                                 <input type="text" class="form-control" id="date" name="date" placeholder="Date"> 
+                             </div>
+                             <div class="col-12 col-sm-5">
+                                 <input type="text" class="form-control" id="datetime" name="datetime" placeholder="Time"> 
+                             </div>
+                             
+                     </div>
+                     <div class="offset-sm-2 col-sm-5">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>     
+                            <button type="submit" class="btn btn-primary">Reserve</button>
+                     </div>
+                 </form>
+              </div>
+             </div>
+         </div>
+    </div>
+
     <title>Ristorante Con Fusion</title>
 </head>
 
@@ -92,8 +162,7 @@
                 </div>
                 <div class="col-12 col-sm-3 mt-4 align-self-cernter">
                     <a role="button" class="btn btn-block btn-small nav-link btn-warning"
-                        href="#order-table-form"
-                        data-toggle="tooltip" data-html="true"  title="Or Call us at  <br><strong>+852 12345678</strong>"
+                        data-toggle="modal" data-target="#reserveModal"
                         data-placement="bottom">Reserve Table</a>
                 </div>
         </div>
@@ -215,59 +284,6 @@
             </div>
         </div>
 
-        <div class="row row-content">
-            <div class="col-12 col-sm-8 offset-sm-2">
-                <div class="card">
-                    <h3 class="card-header bg-warning text-white" id="order-table-form">Reserve a Table</h3>
-                 <div class="card-body">
-                    <form>
-                        <div class="form-group row">
-                            <label  class="col-12 col-sm-2 col-form-label">Number of guests</label>
-
-                            <label class="btn btn-radio">
-                                <input type="radio" name="options" id="option1" autocomplete="off"> 1
-                            </label>
-
-                             <label class="btn btn-radio">
-                                <input type="radio" name="options" id="option2" autocomplete="off"> 2
-                             </label>
-
-                            <label class="btn btn-radio">
-                               <input type="radio" name="options" id="option3" autocomplete="off" > 3
-                            </label>
-                                       
-                            <label class="btn btn-radio">
-                                <input type="radio" name="options" id="option4" autocomplete="off" > 4
-                            </label>
-                                        
-                            <label class="btn btn-radio ">
-                                <input type="radio" name="options" id="option5" autocomplete="off" > 5
-                            </label>
-                                   
-                            <label class="btn btn-radio">
-                                <input type="radio" name="options" id="option6" autocomplete="off"> 6
-                            </label>
-                        
-                       </div>
-                       <div class="form-group row">
-                                <label for="date" class="col-12 col-sm-2 col-form-label">Date and time</label>
-                                <div class="col-12 col-sm-5">
-                                    <input type="text" class="form-control" id="date" name="date" placeholder="Date"> 
-                                </div>
-                                <div class="col-12 col-sm-5">
-                                    <input type="text" class="form-control" id="datetime" name="datetime" placeholder="Time"> 
-                                </div>
-                                
-                        </div>
-                        <div class="offset-sm-1 col-sm-11">
-                                <button type="submit" class="btn btn-primary">Reserve</button>
-                        </div>
-                    </form>
-                 </div>
-                </div>
-            </div>
-            </div>
-
     </div>
 
 
@@ -316,11 +332,6 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
 </body>
 
 </html>
