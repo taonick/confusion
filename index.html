@@ -33,8 +33,10 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <span class="navbar-text">
-            <a data-toggle="modal" data-target="#loginModal">
-            <span class="fa fa-sign-in"></span> Login</a>
+            <!--a data-toggle="modal" data-target="#loginModal"-->
+            <a id="login-btn">
+                <span class="fa fa-sign-in"></span> Login
+            </a>
         </span>
     </nav>
 
@@ -161,9 +163,9 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 mt-4 align-self-cernter">
-                    <a role="button" class="btn btn-block btn-small nav-link btn-warning"
-                        data-toggle="modal" data-target="#reserveModal"
-                        data-placement="bottom">Reserve Table</a>
+                    <!--data-toggle="modal" data-target="#reserveModal"
+                        data-placement="bottom"-->
+                    <a role="button" id="reserve_table_btn" class="btn btn-block btn-small nav-link btn-warning">Reserve Table</a>
                 </div>
         </div>
     </header>
@@ -336,6 +338,7 @@
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
+        // carousel handlers
          $("#carouselButton").click(function(){
                 if ($("#carouselButton").children("span").hasClass('fa-pause')) {
                     $("#mycarousel").carousel('pause');
@@ -347,6 +350,16 @@
                     $("#carouselButton").children("span").removeClass('fa-play');
                     $("#carouselButton").children("span").addClass('fa-pause');                    
                 }
+            });
+
+            // reserve table button habndlers
+            $("#reserve_table_btn").click(function(){
+                 $("#reserveModal").modal('show');
+            });
+
+            // login button habndlers
+            $("#login-btn").click(function(){
+                $("#loginModal").modal('show');
             });
     </script>
 
